@@ -332,7 +332,7 @@ __global__ void reprojection_residuals_and_hessian(
 
       }
 
-      atomicAdd(&r_total[0],  w * r * r);
+      atomicAdd(&r_total[0],  (double)(w * r * r));
 
       adjSE3(tij, qij, Jj, Ji);
 

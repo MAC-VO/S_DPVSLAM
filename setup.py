@@ -6,6 +6,8 @@ from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 ROOT = osp.dirname(osp.abspath(__file__))
 SYSTEM_EIGEN3_DIR = os.environ.get("EIGEN3_INCLUDE_DIR", "/usr/include/eigen3")
 
+os.environ["TORCH_CUDA_ARCH_LIST"] = "6.0 6.1 7.0 7.5 8.0 8.6 8.9 9.0+PTX"
+
 if not osp.isdir(SYSTEM_EIGEN3_DIR):
     raise FileNotFoundError(
         f"Eigen3 include directory was not found at '{SYSTEM_EIGEN3_DIR}'. "
