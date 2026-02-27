@@ -37,18 +37,18 @@ Clone the repo
 git clone https://github.com/princeton-vl/DPVO.git --recursive
 cd DPVO
 ```
-Create and activate the dpvo anaconda environment
+Create and activate the dpvslam anaconda environment
 ```
 conda env create -f environment.yml
-conda activate dpvo
+conda activate dpvslam
 ```
 
-Next install the DPVO package
+Next install the DPV-SLAM package
 ```bash
-wget https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip
-unzip eigen-3.4.0.zip -d thirdparty
+# install system Eigen3 headers
+sudo apt-get install -y libeigen3-dev
 
-# install DPVO
+# install DPV-SLAM
 pip install .
 
 # download models and data (~2GB)

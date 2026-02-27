@@ -1,5 +1,5 @@
 import torch
-import cuda_ba
+import dpvslam_cuda_ba as cuda_ba
 
 neighbors = cuda_ba.neighbors
 reproject = cuda_ba.reproject

@@ -8,11 +8,11 @@ import torch
 from evo.core.trajectory import PoseTrajectory3D
 from evo.tools import file_interface
 
-from dpvo.config import cfg
-from dpvo.dpvo import DPVO
-from dpvo.plot_utils import plot_trajectory, save_output_for_COLMAP, save_ply
-from dpvo.stream import image_stream, video_stream
-from dpvo.utils import Timer
+from dpvslam.config import cfg
+from dpvslam.dpvo import DPVO
+from dpvslam.plot_utils import plot_trajectory, save_output_for_COLMAP, save_ply
+from dpvslam.stream import image_stream, video_stream
+from dpvslam.utils import Timer
 
 SKIP = 0
 

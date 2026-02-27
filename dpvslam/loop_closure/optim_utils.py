@@ -1,4 +1,4 @@
-import cuda_ba
+import dpvslam_cuda_ba as cuda_ba
 import numba as nb
 import numpy as np
 import pypose as pp

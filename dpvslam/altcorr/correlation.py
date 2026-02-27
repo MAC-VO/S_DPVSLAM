@@ -1,5 +1,5 @@
 import torch
-import cuda_corr
+import dpvslam_cuda_corr as cuda_corr
 
 class CorrLayer(torch.autograd.Function):
     @staticmethod

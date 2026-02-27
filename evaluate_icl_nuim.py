@@ -12,11 +12,11 @@ from evo.core.metrics import PoseRelation
 from evo.core.trajectory import PoseTrajectory3D
 from evo.tools import file_interface
 
-from dpvo.config import cfg
-from dpvo.dpvo import DPVO
-from dpvo.plot_utils import plot_trajectory
-from dpvo.stream import image_stream
-from dpvo.utils import Timer
+from dpvslam.config import cfg
+from dpvslam.dpvo import DPVO
+from dpvslam.plot_utils import plot_trajectory
+from dpvslam.stream import image_stream
+from dpvslam.utils import Timer
 
 SKIP = 0
 

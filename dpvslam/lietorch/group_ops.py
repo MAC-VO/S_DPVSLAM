@@ -1,4 +1,4 @@
-import lietorch_backends
+import dpvslam_lietorch_backends as lietorch_backends
 import torch
 import torch.nn.functional as F
 
