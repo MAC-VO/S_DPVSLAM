@@ -1,6 +1,16 @@
 #!/bin/bash
 set -euo pipefail
 
+# Auto-detect GPU architecture and compile only for current GPU.
+if [ -z "${TORCH_CUDA_ARCH_LIST:-}" ]; then
+    CUDA_ARCH=$(python -c "import torch; cc = torch.cuda.get_device_capability(); print(f'{cc[0]}.{cc[1]}')" 2>/dev/null) || {
+        echo "Error: Failed to detect GPU architecture. Ensure CUDA is available."
+        exit 1
+    }
+    export TORCH_CUDA_ARCH_LIST="$CUDA_ARCH"
+    echo "Detected GPU architecture: $CUDA_ARCH"
+fi
+
 # Install standalone lietorch shared with other baselines.
 LIETORCH_PATH="../DROID_SLAM/thirdparty/lietorch"
 if ! python -c "import lietorch" 2>/dev/null; then
