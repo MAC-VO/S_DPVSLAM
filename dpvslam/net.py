@@ -2,7 +2,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from collections import OrderedDict
 
 from . import fastba
 from . import altcorr
@@ -15,9 +14,6 @@ from .blocks import GradientClip, GatedResidual, SoftAgg
 from .utils import *
 from .ba import BA
 from . import projective_ops as pops
-
-autocast = torch.cuda.amp.autocast
-import matplotlib.pyplot as plt
 
 DIM = 384
 
@@ -181,7 +177,7 @@ class VONet(nn.Module):
         self.RES = 4
 
 
-    @autocast(enabled=False)
+    @torch.autocast("cuda", enabled=False)
     def forward(self, images, poses, disps, intrinsics, M=1024, STEPS=12, P=1, structure_only=False, rescale=False):
         """ Estimates SE3 or Sim3 between pair of frames """
 
